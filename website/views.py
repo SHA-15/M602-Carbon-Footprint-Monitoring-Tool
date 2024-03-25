@@ -76,9 +76,9 @@ def energy():
             svg3 = pio.to_image(fig3, format="svg")
             svg_fig3 = svg3.decode("UTF-8")
 
-            session['elec_gas_impact'] = elec_gas_impact 
-            session['fuel_impact'] = fuel_impact
-            session['overall_impact'] = overall_impact
+            session['elec_gas_impact'] = round(elec_gas_impact, 2)
+            session['fuel_impact'] = round(fuel_impact, 2)
+            session['overall_impact'] = round(overall_impact, 2)
             session['max_elec'] = round(max_elec, 2)
             session['max_elec_month'] = max_elec_month.capitalize()
             session['max_gas'] = round(max_gas, 2)
