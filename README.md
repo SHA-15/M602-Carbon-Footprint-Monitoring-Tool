@@ -30,21 +30,21 @@ The application is developed on the [Flask framework](https://flask.palletsproje
 ## Installation
 To clone the repository using HTTPS
 
-'''bash
+```bash
 git clone https://github.com/SHA-15/M602-Carbon-Footprint-Monitoring-Tool.git
-'''
+```
 
 This will install the required project dependencies to run the project
 
-'''bash
+```bash
 pip install -r requirements.txt
-'''
+```
 
 Move to the project's root directory and perform the following command
 
-'''python
+```python
 python3 main.py
-'''
+```
 
 Output:
 '''
