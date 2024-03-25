@@ -28,3 +28,54 @@ The application is developed on the [Flask framework](https://flask.palletsproje
 </p>
 
 ## Installation
+To clone the repository using HTTPS
+
+```bash
+git clone https://github.com/SHA-15/M602-Carbon-Footprint-Monitoring-Tool.git
+```
+
+This will install the required project dependencies to run the project
+
+```bash
+pip install -r requirements.txt
+```
+
+Move to the project's root directory and perform the following command
+
+```python
+python3 main.py
+```
+
+Output:
+```
+ * Serving Flask app 'website'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 142-586-206
+```
+
+Use 
+```
+Cmd + Click
+```
+to run the website server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
