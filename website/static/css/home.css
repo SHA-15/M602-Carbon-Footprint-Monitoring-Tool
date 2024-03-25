@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(to right, #2647c0, #3a45b2, #4543a4, #4b4297, #4f418a, #495198, #4360a4, #3f6fae, #1893cc, #00b6e1, #11d9ed, #5ffbf1);
+}
+
+h1 {
+    margin: 10px 15px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 1.0;
+    text-align: center;
+    color: #fff;
+}
+
+.intro{
+    color: #fff;
+    margin-top: 20px;
+    margin-inline: 8rem;
+
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 3rem;
+}
+
+.card-container {
+    display: grid;
+    row-gap: 3.5rem;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 1.5rem;
+}
+
+.card-article {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 400px;
+    height: 400px;
+    border-radius: 1.5rem;
+}
+
+.card-data {
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+.card-data h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+    color: rgba(53, 148, 36, 0.834);
+}
+
+.card-data p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+}
+
+.card-button {
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(141, 19, 198, 0.685);
+}
+
+.card-button:hover {
+    text-decoration: underline;
+}
+
+.card-article:hover .card-data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.card-article:hover {
+    animation: remove-overflow 2s forwards;
+}
+
+.card-article:not(:hover) {
+    animation: show-overflow 2s forwards;
+}
+
+.card-article:not(:hover) .card-data {
+    animation: remove-data 1s forwards;
+}
+
+@keyframes show-data{
+    50% {
+        transform: translateY(-10rem);
+    }
+    100% {
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow {
+    to {
+        overflow: initial;
+
+    }
+}
+
+@keyframes remove-data {
+    0% {
+        transform: translateY(-7rem);
+
+    }
+    50% {
+        transform: translateY(-10rem);
+        
+    }
+    100% {
+        transform: translateY(.5rem);
+        
+    }
+}
+
+@keyframes show-overflow {
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50% {
+        overflow: hidden;
+    }
+}
+
+.energy-form {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 0.5rem;
+    row-gap: 1.5rem;
+    border: 2px solid #fff;
+    border-radius: 1.5rem;
+    margin-inline: 1rem;
+    background: rgba(13, 127, 140, 0.3)
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    margin-inline: 0.4rem;
+    justify-content: center;
+}
+
+.question p {
+    height: 3rem;
+    margin-block: 1.2rem;
+    padding-inline: 2.5rem;
+    text-align: center;
+}
+
+.form-header {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+}
+
+.energy-form p {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.box {
+    text-align: center;
+}
+
+.box input {
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 1.2rem;
+    padding: 5px 5px;
+    margin-block: 0.2rem;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.box input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.box input:focus {
+    border: 3px solid rgb(25, 232, 49);
+}
+
+.box input::-webkit-outer-spin-button,
+.box input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.energy-button {
+    grid-column: 2 / 2;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 1.2rem;
+    color: #fff;
+    width: 50%;
+    justify-self: center;
+    transition: 0.5s ease;
+}
+
+.energy-button:hover {
+    color: rgba(13, 127, 140, 1);
+    font-weight: 600;
+    background: #fff;
+    border: 3px solid rgba(13, 127, 140, 1);
+}
+
+.waste-form {
+    display: grid;
+    border: 2px solid #fff;
+    border-radius: 1.5rem;
+    margin-inline: 1rem;
+    background: rgba(13, 127, 140, 0.3);
+}
+
+.waste-form .waste-questions {
+    color: #fff;
+    text-align: center;
+    margin-block: 1.2rem;
+}
+
+.waste-recycling {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+.waste-button {
+    margin-block: 1.5rem;
+    font-size: 1.5rem;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 1.2rem;
+    color: #fff;
+    width: 16%;
+    justify-self: center;
+    transition: 0.5s ease;
+}
+
+.waste-button:hover {
+    color: rgba(13, 127, 140, 1);
+    font-weight: 600;
+    background: #fff;
+    border: 3px solid rgba(13, 127, 140, 1);
+
+}

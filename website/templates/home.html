@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css')}}">
+
+    <!-- Google Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Tab -->
+
+    <title>Carbon Footprint Monitoring Tool</title>
+</head>
+<body>
+    <div class="introduction">
+        <h1>Carbon Footprint Monitoring Tool</h1>
+        <p class="intro">The carbon footprint monitoring tool is an initiative taken by GISMA students to identify current carbon footprint of household environments and provide guidance on improvements.   This is part of the M602 Computer Programming cohort assignment, and looking forward to you enjoying the experience!</p>
+    </div>
+    <div class="container">
+        <div class="card-container">
+            <article class="card-article">
+                <img class="card-image" src="../static/images/earth-day-environment-concept-eco-concept.jpg" alt="">
+
+                <div class="card-data">
+                    <h3>Energy Usage Calculator</h3>
+                    <p>Identify CO<sub>2</sub> impact across your electricity, natural gas and fuel consumptions</p>
+                    <a href="#energy-usage" class="card-button">Energy Consumption Calculator</a>
+                </div>
+            </article>
+
+            <article class="card-article">
+                <img class="card-image" src="../static/images/6824802.jpg" alt="">
+
+                <div class="card-data">
+                    <h3>Waste Generation and Recycling</h3>
+                    <p>Identify how waste effective waste recycling methods have impacted in curbing CO<sub>2</sub> emissions via your own effective waste management practices</p>
+                    <a href="#waste-usage" class="card-button">Waste Generation Calculator</a>
+                </div>
+            </article>
+
+            <article class="card-article">
+                <img class="card-image" src="../static/images/Wavy_Lst-17_Single-11.jpg" alt="">
+
+                <div class="card-data">
+                    <h3>Business Travel</h3>
+                    <p>CO<sub>2</sub> emissions are heavier due to increased travel for work reasons, this includes your team membders or businesses as well as the daily modes of transportation you employ personally</p>
+                    <a href="#travel-usage" class="card-button">Business Travel Calculator</a>
+                </div>
+            </article>
+        </div>
+    </div> 
+
+    <!-- CALCULATION FORMS FOR THE FIRST SECTION -->
+    <section class="energy consumption">
+        <h3 id="energy-usage" class="form-header">ENERGY USAGE CALCULATOR</h3>
+        <form class ="energy-form" method="POST" action="/energy">
+            <div class="question 1">
+                <p class="statement-1">What is your electricity consumption(in Euros) ?</p>
+                <div class="electricity box">    
+                    <input type="number" id="elec_jan" name="elec_jan" placeholder="January">
+                    <input type="number" id="elec_feb" name="elec_feb" placeholder="February">
+                    <input type="number" id="elec_mar" name="elec_mar" placeholder="March">
+                    <input type="number" id="elec_apr" name="elec_apr" placeholder="April">
+                    <input type="number" id="elec_may" name="elec_may" placeholder="May">
+                    <input type="number" id="elec_jun" name="elec_jun" placeholder="June">
+                    <input type="number" id="elec_jul" name="elec_jul" placeholder="July">
+                    <input type="number" id="elec_aug" name="elec_aug" placeholder="August">
+                    <input type="number" id="elec_sep" name="elec_sep" placeholder="September">
+                    <input type="number" id="elec_oct" name="elec_oct" placeholder="October">
+                    <input type="number" id="elec_nov" name="elec_nov" placeholder="November">
+                    <input type="number" id="elec_dec" name="elec_dec" placeholder="December">
+                </div>
+            </div>
+            <div class="question 2">
+                <p>What is your average monthly natural gas consumption(in Euros) ?</p>
+                <div class="gas box">    
+                    <input type="number" id="gas_jan" name="gas_jan" placeholder="January">
+                    <input type="number" id="gas_feb" name="gas_feb" placeholder="February">
+                    <input type="number" id="gas_mar" name="gas_mar" placeholder="March">
+                    <input type="number" id="gas_apr" name="gas_apr" placeholder="April">
+                    <input type="number" id="gas_may" name="gas_may" placeholder="May">
+                    <input type="number" id="gas_jun" name="gas_jun" placeholder="June">
+                    <input type="number" id="gas_jul" name="gas_jul" placeholder="July">
+                    <input type="number" id="gas_aug" name="gas_aug" placeholder="August">
+                    <input type="number" id="gas_sep" name="gas_sep" placeholder="September">
+                    <input type="number" id="gas_oct" name="gas_oct" placeholder="October">
+                    <input type="number" id="gas_nov" name="gas_nov" placeholder="November">
+                    <input type="number" id="gas_dec" name="gas_dec" placeholder="December">
+                </div>
+            </div>
+            <div class="question 3">
+                <p>What is your average monthly fuel bill for transportation(in Euros) ?</p>
+                <div class="fuel box">    
+                    <input type="number" id="fuel_jan" name="fuel_jan" placeholder="January">
+                    <input type="number" id="fuel_feb" name="fuel_feb" placeholder="February">
+                    <input type="number" id="fuel_mar" name="fuel_mar" placeholder="March">
+                    <input type="number" id="fuel_apr" name="fuel_apr" placeholder="April">
+                    <input type="number" id="fuel_may" name="fuel_may" placeholder="May">
+                    <input type="number" id="fuel_jun" name="fuel_jun" placeholder="June">
+                    <input type="number" id="fuel_jul" name="fuel_jul" placeholder="July">
+                    <input type="number" id="fuel_aug" name="fuel_aug" placeholder="August">
+                    <input type="number" id="fuel_sep" name="fuel_sep" placeholder="September">
+                    <input type="number" id="fuel_oct" name="fuel_oct" placeholder="October">
+                    <input type="number" id="fuel_nov" name="fuel_nov" placeholder="November">
+                    <input type="number" id="fuel_dec" name="fuel_dec" placeholder="December">
+                </div>
+            </div>
+            <button name="energy-button" class="energy-button" type="submit">
+                GENERATE
+            </button>
+        </form>
+    </section>
+
+    <!-- CALCULATION FORMS FOR THE SECOND SECTION -->
+
+    <section class="waste consumption">
+        <h3 class="form-header">WASTE GENERATION</h3>
+        <form class ="waste-form" method="POST" action="/waste-generation">
+            <div class="waste-questions">
+                <p>How much waste do you generate(in kilograms) ?</p>
+                <p>How much of the waste is recycled or composted(in % values) ?</p>
+            </div>
+            <div class="waste-recycling box">
+                <div class="jan">   
+                    <input type="number" id="waste_jan" name="waste_jan" placeholder="January Waste">
+                    <input type="number" id="percent_jan" name="percent_jan" placeholder="% Recycled">
+                </div>
+                <div class="feb"> 
+                    <input type="number" id="waste_feb" name="waste_feb" placeholder="February Waste">
+                    <input type="number" id="percent_feb" name="percent_feb" placeholder="% Recycled">
+                </div>
+                <div class="mar">
+                    <input type="number" id="waste_mar" name="waste_mar" placeholder="March Waste">
+                    <input type="number" id="percent_mar" name="percent_mar" placeholder="% Recycled">
+                </div>
+                <div class="apr">
+                    <input type="number" id="waste_apr" name="waste_apr" placeholder="April Waste">
+                    <input type="number" id="percent_apr" name="percent_apr" placeholder="% Recycled">
+                </div>
+                <div class="may">
+                    <input type="number" id="waste_may" name="waste_may" placeholder="May Waste">
+                    <input type="number" id="percent_may" name="percent_may" placeholder="% Recycled">
+                </div>
+                <div class="jun">
+                    <input type="number" id="waste_jun" name="waste_jun" placeholder="June Waste">
+                    <input type="number" id="percent_jun" name="percent_jun" placeholder="% Recycled">
+                </div>
+                <div class="jul">
+                    <input type="number" id="waste_jul" name="waste_jul" placeholder="July Waste">
+                    <input type="number" id="percent_jul" name="percent_jul" placeholder="% Recycled">
+                </div>
+                <div class="aug">
+                    <input type="number" id="waste_aug" name="waste_aug" placeholder="August Waste">
+                    <input type="number" id="percent_aug" name="percent_aug" placeholder="% Recycled">
+                </div>
+                <div class="sep">
+                    <input type="number" id="waste_sep" name="waste_sep" placeholder="September Waste">
+                    <input type="number" id="percent_sep" name="percent_sep" placeholder="% Recycled">
+                </div>
+                <div class="oct">
+                    <input type="number" id="waste_oct" name="waste_oct" placeholder="October Waste">
+                    <input type="number" id="percent_oct" name="percent_oct" placeholder="% Recycled">
+                </div>
+                <div class="nov">
+                    <input type="number" id="waste_nov" name="waste_nov" placeholder="November Waste">
+                    <input type="number" id="percent_nov" name="percent_nov" placeholder="% Recycled">
+                </div>
+                <div class="dec">
+                    <input type="number" id="waste_dec" name="waste_dec" placeholder="December Waste">
+                    <input type="number" id="percent_dec" name="percent_dec" placeholder="% Recycled">
+                </div>
+            </div>
+            <button name="waste-button" id="waste-usage" class="waste-button" type="submit">
+                GENERATE
+            </button>
+        </form>
+    </section>
+
+    <!-- CALCULATION FORMS FOR THE THIRD SECTION -->
+
+    <section class="waste consumption">
+        <h3 class="form-header">BUSINESS TRAVEL</h3>
+        <form class ="waste-form" method="POST" action="/business-travel">
+            <div class="waste-questions">
+                <p>How many kilometers do your employees travel per year for business purposes ?</p>
+                <p>What is the average fuel efficiency of the vehicles used for business travel (in l/100 km) ?</p>
+            </div>
+            <div class="waste-recycling box">
+                <div class="jan">   
+                    <input type="number" id="fuel_jan" name="fuel_jan" placeholder="January Travel">
+                    <input type="number" id="efficiency_jan" name="efficiency_jan" placeholder="Fuel Efficiency">
+                </div>
+                <div class="feb"> 
+                    <input type="number" id="fuel_feb" name="fuel_feb" placeholder="February Travel">
+                    <input type="number" id="efficiency_feb" name="efficiency_feb" placeholder="Fuel Efficiency">
+                </div>
+                <div class="mar">
+                    <input type="number" id="fuel_mar" name="fuel_mar" placeholder="March Travel">
+                    <input type="number" id="efficiency_mar" name="efficiency_mar" placeholder="Fuel Efficiency">
+                </div>
+                <div class="apr">
+                    <input type="number" id="fuel_apr" name="fuel_apr" placeholder="April Travel">
+                    <input type="number" id="efficiency_apr" name="efficiency_apr" placeholder="Fuel Efficiency">
+                </div>
+                <div class="may">
+                    <input type="number" id="fuel_may" name="fuel_may" placeholder="May Travel">
+                    <input type="number" id="efficiency_may" name="efficiency_may" placeholder="Fuel Efficiency">
+                </div>
+                <div class="jun">
+                    <input type="number" id="fuel_jun" name="fuel_jun" placeholder="June Travel">
+                    <input type="number" id="efficiency_jun" name="efficiency_jun" placeholder="Fuel Efficiency">
+                </div>
+                <div class="jul">
+                    <input type="number" id="fuel_jul" name="fuel_jul" placeholder="July Travel">
+                    <input type="number" id="efficiency_jul" name="efficiency_jul" placeholder="Fuel Efficiency">
+                </div>
+                <div class="aug">
+                    <input type="number" id="fuel_aug" name="fuel_aug" placeholder="August Travel">
+                    <input type="number" id="efficiency_aug" name="efficiency_aug" placeholder="Fuel Efficiency">
+                </div>
+                <div class="sep">
+                    <input type="number" id="fuel_sep" name="fuel_sep" placeholder="September Travel">
+                    <input type="number" id="efficiency_sep" name="efficiency_sep" placeholder="Fuel Efficiency">
+                </div>
+                <div class="oct">
+                    <input type="number" id="fuel_oct" name="fuel_oct" placeholder="October Travel">
+                    <input type="number" id="efficiency_oct" name="efficiency_oct" placeholder="Fuel Efficiency">
+                </div>
+                <div class="nov">
+                    <input type="number" id="fuel_nov" name="fuel_nov" placeholder="November Travel">
+                    <input type="number" id="efficiency_nov" name="efficiency_nov" placeholder="Fuel Efficiency">
+                </div>
+                <div class="dec">
+                    <input type="number" id="fuel_dec" name="fuel_dec" placeholder="December Travel">
+                    <input type="number" id="efficiency_dec" name="efficiency_dec" placeholder="Fuel Efficiency">
+                </div>
+            </div>
+            <button name="business-button" id="travel-usage" class="waste-button" type="submit">
+                GENERATE
+            </button>
+        </form>
+    </section>
+</body>
+</html>

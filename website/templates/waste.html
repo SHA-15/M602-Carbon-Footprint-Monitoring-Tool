@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Waste Management and Recycling{% endblock %}
+{% block content1 %}
+<div class="suggestion">
+    <p>The major contributor to waste is in the month of {{ session['max_month'] }} which contributed to almost {{ session['max_waste'] }} kg's worth of waste. With an efficiency of {{ session['max_efficiency'] }}%. Improvements to this can be in the form of:</p><br>
+    <ul>
+        <li>Reusable items such as water bottles, shopping bags and item containers.</li>
+        <li>Food recycling by contribution to food banks.</li>
+        <li>Opt out of Paper magazines, letters and junk mail, reducing overall paper scrap generation.</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content2 %}
+<div class="suggestion">
+    <p>The optimum waste recycling efficiency peaked around the month of {{ session['optimum_month'] }}. The resultant efficiency achieved during this period is {{ session['optimum_efficiency'] }}%.</p><br>
+    <ul>
+        <li>Feeding food scraps to farm-based pets</li>
+        <li>Setting up a compost pile within backyards</li>
+        <li>Utilize worm bins for inhouse composting</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content3 %}
+{% if session['waste_impact'] > 465 %}
+<div class="suggestion">
+    <p>The Total Waste generation amounts to {{ session['waste_impact'] }} kgCO<sub>2</sub>. The greatest impact was found in {{ session['max_diff_month'] }} with a {{ session['max_differential'] }} kgCO<sub>2</sub> impact. The contributors to this change is {{ session['max_diff_waste'] }} kg's and {{ session['max_diff_eff'] }}% of change versus the previous month.</p><br>
+
+    <p>On the other hand, the greatest variation occurring between {{ session['max_diff_month'] }} and {{ session['min_diff_month'] }}. {{ session['diff_waste'] }} kg's being the greatest variation across the year in waste generation. Efficiency drop-off was seen at {{ session['diff_eff'] }}%. Improvements in this area can be in the form of:</p>
+    <ul>
+        <li>Elimination of non-biodegradable plastics in the household.</li>
+        <li>Pre-planning and Measured food consumption, shopping and utilizing resuable instruments.</li>
+        <li>Aligning regular curbside waste collection.</li>
+    </ul>
+</div>
+
+{% else %}
+<div class="suggestion">
+    <p>The Total Waste generation amounts to {{ session['waste_impact'] }} kgCO<sub>2</sub>. The greatest impact was found in {{ session['max_diff_month'] }} with a {{ session['max_differential'] }} kgCO<sub>2</sub> impact. The contributors to this change is {{ session['max_diff_waste'] }} kg's and {{ session['max_diff_eff'] }}% of change versus the previous month. With good strides enforced during this time, some further improvements can be in the form of: </p>
+    <ul>
+        <li>Elimination of non-biodegradable plastics in the household.</li>
+        <li>Pre-planning and Measured food consumption, shopping and utilizing resuable instruments.</li>
+        <li>Aligning regular curbside waste collection.</li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
+{% block buttoncontent %}
+<a class="download-button" name="download-button" href="/waste-pdf" target="_blank">CREATE PDF</a>
+<a class="download-button home" name="home-button" href="/" target="_self">HOME</a>
+{% endblock %}

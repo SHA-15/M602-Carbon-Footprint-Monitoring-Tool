@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-image: linear-gradient(to right, #2647c0, #3a45b2, #4543a4, #4b4297, #4f418a, #495198, #4360a4, #3f6fae, #1893cc, #00b6e1, #11d9ed, #5ffbf1);
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-block: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 3rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin: 1rem 1.5rem;
+    background-color: rgba(33, 26, 26, 0.601);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+    border-radius: 1rem;
+}
+
+.graph-object {
+    margin-inline-end: 1.2rem;
+    border-radius: 1.5rem;
+}
+
+.container .suggestion {
+    align-self: center;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 1rem;
+    grid-column-start: 2;
+    margin-right: 0.8rem;
+}
+
+.container .suggestion ul {
+    margin-inline: 1.3rem;
+}
+
+.container .suggestion li {
+    line-height: 1.5;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.download-button {
+    color: white;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.596);
+    border-radius: 5rem;
+    padding-inline: 1.2rem;
+    padding-block: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-block: 2rem;
+    transition:0.5s ease;
+}
+
+.download-button:hover {
+    transform: scale(1.2);
+    background: #fff;
+    color: rgba(13, 127, 140, 1);
+    font-weight: 500;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #0089BA;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-block: 1.2rem;
+    padding-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 3rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin: 1rem 1.5rem;
+    /* background-color: rgba(33, 26, 26, 0.601); */
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+    border-radius: 1rem;
+}
+
+.graph-object {
+    margin-inline-end: 1.2rem;
+    border-radius: 1.5rem;
+}
+
+.container .suggestion {
+    align-self: center;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    grid-column-start: 2;
+    margin-right: 0.8rem;
+    z-index: 1000000;
+}
+
+.container .suggestion ul {
+    margin-inline: 1.3rem;
+}
+
+.container .suggestion li {
+    line-height: 1.5;
+}
+
+.button {
+    display: none;
+}
+
+.download-button {
+    display: none;
+}
+

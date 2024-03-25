@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Business Travel Impact{% endblock %}
+{% block content1 %}
+<div class="suggestion">
+    <p>The total yearly business travel amounts to {{ session['total_km'] }} km's of coverage. The largest impact towards this result is found in {{ session['total_km_max_month'] }} with an overall contribution of {{ session['total_km_max'] }} km's and a subsequent {{ session['total_liter'] }} liters worth of fuel consumption.</p><br>
+</div>
+{% endblock %}
+
+{% block content2 %}
+<div class="suggestion">
+    <p>Total vehicular efficiency impacts the overall utilization of fossil fuels, battery power utilization. The largest fuel efficiency seen across these datapoints comes in the month of {{ session['max_fuel_eff_month'] }} with {{ session['max_fuel_efficiency'] }}. In order to better improve the efficiencies achieved, consider the following:</p><br>
+    <ul>
+        <li>Utilize Hybrid/Electric Vehicle Transportation for all business travel journeys instead of IC vehicles.</li>
+        <li>Run Large psi engines across longhaul travel, such as on the Autobahn, to improve fuel efficiencies across longer routes.</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content3 %}
+{% if session['total_travel_month'] in session['months'][3:9] %}
+<div class="suggestion">
+    <p>Business Travel has amounted upto {{ session['total_travel_impact'] }} kgCO<sub>2</sub>. The maximum contribution has come in {{ session['total_travel_month'] }} with {{ session['total_travel_distance'] }} km's travelled and {{ session['total_travel_efficiency'] }} l/100km. Considering the highest impact was between Spring and Summer, it is best to consider:</p><br>
+    <ul>
+        <li>Start utilizing mass transportation instead of personal vehicles/chauffeurs to reduce overall fuel utilizatiion</li>
+        <li>Utilize Hybrid vehicles or Smaller psi-powered vehicles for shorter trips within cities and provinces</li>
+    </ul>
+</div>
+
+{% else %}
+<div class="suggestion">
+    <p>Business Travel has amounted upto {{ session['total_travel_impact'] }} kgCO<sub>2</sub>. The maximum contribution has come in {{ session['total_travel_month'] }} with {{ session['total_travel_distance'] }} km's travelled and {{ session['total_travel_efficiency'] }} l/100km. Considering the highest impact was between Autumn and Winter, it is best to consider:</p><br>
+    <ul>
+        <li>Promote Remote Connectivity in the workplace and introduce remote methods such as Virtual Vendor Acceptance Testing to reduce flow of individuals</li>
+        <li>Plan group travel instead of individual-centric plans to ensure reduced carbon footprint for individuals</li>
+        <li>Utilize only greehouse gas efficient modes of transport during business travel.</li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
+{% block buttoncontent %}
+<a class="download-button" name="download-button" href="/travel-pdf" target="_blank">CREATE PDF</a>
+<a class="download-button home" name="home-button" href="/" target="_self">HOME</a>
+{% endblock %}

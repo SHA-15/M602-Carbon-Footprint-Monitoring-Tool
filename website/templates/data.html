@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %}ENERGY CONSUMPTION IMPACT{% endblock %}
+{% block content1 %}
+{% if session['elec_gas_impact'] > 0.291 %}
+<div class="suggestion">
+    <p>The overall impact from your electrical and natural gas consumption amounts to {{ session['elec_gas_impact'] }}kg/CO<sub>2</sub> which is greater than the current 0.291kg CO<sub>2</sub>eq/kWh impact in Germany.</p><br>
+
+    <!-- MAX ELECTRICITY AND MONTH RECOMMENDATION -->
+    {% if session['max_elec_month'] in session['months'][3:8] %}
+
+        <p>The maximum electric consumption came in {{ session['max_elec_month'] }}, amounting to {{ session['max_elec'] }} kg CO<sub>2</sub>. Given that this is captured in the Spring to Summer Season. In this case, the suggestion would be to:</p>
+        <ul>
+            <li>Replace incandescent bulbs with LED lamps, which use 85% less energy</li>
+        </ul>
+
+    {% else %}
+        <p>The maximum electric consumption came in {{ session['max_elec_month'] }}, amounting to {{ session['max_elec'] }} kg CO<sub>2</sub>. Given that this is captured in the Autumn to Winter Season. In this case, the suggestion would be to:</p>
+        <ul>
+            <li>Ensure Power supply of all major personal electronics such as Washine Machines, Electric Stoves is disconnected.</li>
+        </ul>
+    {% endif %}
+    <br>
+    <!-- MAX NATURAL GAS AND MONTH RECOMMENDATION -->
+    {% if session['max_gas_month'] in session['months'][3:8] %}
+
+        <p>The maximum natural gas consumption came in {{ session['max_gas_month'] }}, amounting to {{ session['max_gas'] }} Euros. Given that this is captured in the Spring to Summer Season. In this case, the suggestion would be to:</p>
+        <ul>
+            <li>Set thermostats 2&deg;C lower in Spring and shutoff in Summer, heating accounts for almost 50% of all home energy use</li>
+        </ul>
+
+    {% else %}
+        <p>The maximum natural consumption came in {{ session['max_gas_month'] }}, amounting to {{ session['max_gas'] }} Euros. Given that this is captured in the Autumn to Winter Season. In this case, the suggestion would be to:</p>
+        <ul>
+            <li>Wrap insulation covers around water heaters and set unit's thermostat to no more than 49&deg;C</li>
+            <li>Set thermostats 2&deg;C lower in winter and 2&deg;C higher in Autumn, heating accounts for almost 50% of all home energy use</li>
+        </ul>
+    {% endif %}
+</div>
+
+{% else %}
+<div class="suggestion">
+    <p>The overall impact from your electrical and natural gas consumption amounts to {{ session['elec_gas_impact'] }}, This is a testament to your contribution towards improving the overall climate health! Some tips to improve your carbon footprint reduction journey:</p>
+    <ul>
+        <li>Replace incandescent bulbs with LED lamps, which use 85% less energy</li>
+        <li>Set thermostats 2&deg;C lower in winter and 2&deg;C higher in summer, heating accounts for almost 50% of all home energy use</li>
+        <li>Wrap insulation covers around water heaters and set unit's thermostat to no more than 49&deg;C</li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content2 %}
+{% if session['fuel_impact'] > 0.465 %}
+<div class="suggestion">
+    <p>The overall impact from your transport fuel consumption amounts to {{ session['fuel_impact'] }} kgCO<sub>2</sub> which is greater than the current 0.465kg CO<sub>2</sub>eq/kWh impact of Germany. Certain Steps that can be taken to improve this include:</p><br>
+
+    <!-- MAX ELECTRICITY AND MONTH RECOMMENDATION -->
+    {% if session['max_fuel_month'] in session['months'][3:8] %}
+
+        <p>The maximum Fuel consumption came in {{ session['max_fuel_month'] }} kgCO<sub>2</sub>, amounting to {{ session['max_fuel'] }} kgCO<sub>2</sub>. Given that this is captured in the Spring to Summer Season. In this case, the suggestion would be to:</p><br>
+        <ul>
+            <li>Walk, ride a bike or travel to places using mass transportation whenever possible</li>
+            <li>Choose a more efficient vehicle daily use, reduce 1360 kg/year with a 1.3l/km more efficent car</li>
+        </ul>
+
+    {% else %}
+        <p>The maximum Fuel consumption came in {{ session['max_fuel_month'] }}, amounting to {{ session['max_fuel'] }} kg CO<sub>2</sub>. Given that this is captured in the Autumn to Winter Season. In this case, the suggestion would be to:</p>
+        <ul>
+            <li>Choose a more efficient vehicle daily use, reduce 1360 kg/year with a 1.3l/km more efficent car</li>
+        </ul>
+    {% endif %}
+</div>
+
+{% else %}
+<div class="suggestion">
+    <p>The overall impact from your transport fuel consumption amounts to {{ session['fuel_impact'] }}, This is a testament to your contribution towards improving the overall climate health! Some tips to improve your carbon footprint reduction journey:</p><br>
+    <ul>
+        <li>Walk, ride a bike or travel to places using mass transportation whenever possible</li>
+        <li>Choose a more efficient vehicle daily use, reduce 1360 kg/year with a 1.3l/km more efficent car</li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content3 %}
+{% if session['overall_impact'] > 0.756 %}
+<div class="suggestion">
+    <p>The Personal Energy Carbon Footprint amounts to {{ session['overall_impact'] }} KgCO<sub>2</sub></p><br>
+    <p>Part Contributors to this large impact is seen from the data summary below:</p>
+    <ul>
+        <li><b>Max Impact</b>: {{ session['max_carbon_impact'] }} kgCO<sub>2</sub> | {{ session['max_carbon_impact_month'] }}</li>
+        <li><b>Impact Electric Contribution</b>: {{ session['max_carbon_elec'] }} kgCO<sub>2</sub</li>
+        <li><b>Impact Gas Contribution</b>: {{ session['max_carbon_gas'] }} kgCO<sub>2</sub></li>
+        <li><b>Fuel Contribution</b>: {{ session['max_carbon_fuel'] }} kgCO<sub>2</sub</li>
+    </ul><br>
+    <p><b>Improvements can look in the form of:</b></p>
+    <ul>
+        <li>Schedule a home energy assessment, that provide energy-saving devices and can suggest insulation and energy efficiency improvements to the household</li>
+        <li>Utilize less hot water, Install a low-flow shower head and washing clothes in cold or warm water instead of of hot water</li>
+        <li>Close all active electric applications such Heaters, Washine Machines, and standby devices to reduce electric and natural gas consumption</li>
+    </ul>
+</div>
+
+{% else %}
+<div class="suggestion">
+    <p>The overall impact from your electrical, natural gas and transport fuel consumption amounts to {{ session['overall_impact'] }}, This is a testament to your contribution towards improving the overall climate health! Some tips to improve your carbon footprint reduction journey:</p>
+    <ul>
+        <li>Schedule a home energy assessment, that provide energy-saving devices and can suggest insulation and energy efficiency improvements to the household</li>
+        <li>Utilize less hot water, Install a low-flow shower head and washing clothes in cold or warm water instead of of hot water</li>
+        <li>Close all active electric applications such Heaters, Washine Machines, and standby devices to reduce electric and natural gas consumption</li>
+    </ul>
+</div>
+{% endif %}
+{% endblock %}
+{% block buttoncontent %}
+<a class="download-button" name="download-button" href="/energy-pdf" target="_blank">CREATE PDF</a>
+<a class="download-button home" name="home-button" href="/" target="_self">HOME</a>
+{% endblock %}
