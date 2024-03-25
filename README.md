@@ -47,7 +47,7 @@ python3 main.py
 ```
 
 Output:
-'''
+```
  * Serving Flask app 'website'
  * Debug mode: on
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -56,9 +56,13 @@ Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 142-586-206
-'''
+```
 
-Use > Cmd + Click to run the website server
+Use 
+```
+Cmd + Click
+```
+to run the website server
 
 
 
