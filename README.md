@@ -55,24 +55,11 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 ```
 
-Use 
-```
-Cmd + Click
-```
-to run the website server
+## Usage
+ Use the Title Images to scroll towards each form.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ ### Carbon Footprint Forms
+ 1. Add Integer Values to each input field. (Text Fields will not be accepted due to Front-End Validation)
+ 2. Percentage values require integer values (input 70 for 70% instead of 0.07 or 70%) 
+ 3. Click on Generate report to identify visualizations and identify areas of improvement.
+ 4. Report will be outputted to a new window to allow redirection to homepage for further calculations.
