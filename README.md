@@ -28,6 +28,12 @@ The application is developed on the [Flask framework](https://flask.palletsproje
 </p>
 
 ## Installation
+
+Python Version For the Project
+```python
+python 3.12.0
+```
+
 To clone the repository using HTTPS
 
 ```bash
