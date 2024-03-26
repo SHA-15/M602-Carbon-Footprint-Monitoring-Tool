@@ -18,7 +18,6 @@ def create_app():
     '''
     app = Flask(__name__)
     app.secret_key = 'M602_Computer_Programming'
-    app.config['PDF_FOLDER'] = "static/pdf"
     app.config['TEMPLATE_FOLDER'] = "templates/"
 
     from .views import carbon_footprint

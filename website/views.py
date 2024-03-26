@@ -95,7 +95,7 @@ def energy():
             session['svg_fig2'] = svg_fig2
             session['svg_fig3'] = svg_fig3
 
-            return render_template("data.html")  
+            return render_template("data.html")
 
     render_template("home.html")
 
